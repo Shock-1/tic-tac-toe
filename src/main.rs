@@ -57,7 +57,7 @@ fn main() {
                         game.go(game.posswin(2))
                     }
                     else {
-                        let mut blank;
+                        let mut blank = 1;
                         let arr = game.board;
                         for (a,b) in arr.iter().enumerate(){
                             match b {
@@ -74,7 +74,7 @@ fn main() {
                         game.go(game.posswin(1))
                     }
                     else {
-                        let mut blank;
+                        let mut blank = 1;
                         let arr = game.board;
                         for (a,b) in arr.iter().enumerate(){
                             match b {
@@ -91,15 +91,15 @@ fn main() {
                         game.go(game.posswin(2))
                     }
                     else {
-                        let mut blank;
+                        let mut blank = 1;
                         let arr = game.board;
                         for (a,b) in arr.iter().enumerate(){
                             match b {
                                 2 => blank = a,
                                 _ => continue,
                             }
-                            game.go(blank)
                         }
+                        game.go(blank)
                     }
                     _ => println!("Game Over")
                 };
@@ -164,7 +164,7 @@ fn main() {
                         game.go(game.posswin(1))
                     }
                     else {
-                        let mut blank;
+                        let mut blank = 1;
                         let arr = game.board;
                         for (a,b) in arr.iter().enumerate(){
                             match b {
