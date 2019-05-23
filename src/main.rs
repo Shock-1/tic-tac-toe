@@ -1,7 +1,6 @@
 use art_intell::Game;
 use rand::Rng;
 use std::io;
-//use std::rc::Rc;
 
 fn main() {
     let mut game = Game::new();
