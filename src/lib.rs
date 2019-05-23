@@ -1,5 +1,7 @@
 extern crate rand;
 use rand::Rng;
+use std::process;
+
 #[derive(Debug,Default)]
 pub struct Game{
     pub board: [u32;9],
@@ -118,7 +120,7 @@ impl Game {
             //self.player = 2;
 
         }
-        &self.check_win();
+        self.check_win();
         //dbg!(self.board);
         println!("AI moved to {}", n);
         self.turn+=1;
@@ -128,33 +130,32 @@ impl Game {
         for i in 0..3 {
             {
                 if self.board[3 * i] * self.board[3 * i + 1] * self.board[3 * i + 2] == 27 {
-                    println!("Player1 wins");
-                    break;
+                    println!("PLAYER1 WINS");
+                    process::exit(0);
                 } else if self.board[i] * self.board[i + 3] * self.board[i + 6] == 27 {
-                    println!("Player1 wins");
-                    break;
-                    break;
+                    println!("PLAYER1 WINS");
+                    process::exit(0);
                 } else if self.board[0] * self.board[4] * self.board[8] == 27 {
-                    println!("Player1 wins");
-                    break;
+                    println!("PLAYER1 WINS");
+                    process::exit(0);
                 } else if self.board[2] * self.board[4] * self.board[6] == 27 {
-                    println!("Player1 wins");
-                    break;
+                    println!("PLAYER1 WINS");
+                    process::exit(0);
                 }
                 if self.board[3 * i] * self.board[3 * i + 1] * self.board[3 * i + 2] == 125 {
-                    println!("Player2 wins");
-                    break;
+                    println!("PLAYER2 WINS");
+                    process::exit(0);
                 }
                 if self.board[i] * self.board[i + 3] * self.board[i + 6] == 125 {
-                    println!("Player2 wins");
-                    break;
+                    println!("PLAYER2 WINS");
+                    process::exit(0);
                 }
                 if self.board[0] * self.board[4] * self.board[8] == 125 {
-                    println!("Player2 wins");
-                    break;
+                    println!("PLAYER2 WINS");
+                    process::exit(0);
                 } else if self.board[2] * self.board[4] * self.board[6] == 125 {
-                    println!("Player2 wins");
-                    break;
+                    println!("PLAYER2 WINS");
+                    process::exit(0);
                 }
             }
         }
