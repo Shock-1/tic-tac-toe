@@ -64,8 +64,8 @@ fn main() {
                                 2 => blank = a,
                                 _ => continue,
                             }
-                            game.go(blank)
                         }
+                        game.go(blank)
                     }
                     8 => if game.posswin(2)!=0 {
                         game.go(game.posswin(2))
@@ -81,8 +81,8 @@ fn main() {
                                 2 => blank = a,
                                 _ => continue,
                             }
-                            game.go(blank)
                         }
+                        game.go(blank)
                     }
                     9 => if game.posswin(1)!=0 {
                         game.go(game.posswin(1))
@@ -171,8 +171,8 @@ fn main() {
                                 2 => blank = a,
                                 _ => continue,
                             }
-                            game.go(blank)
                         }
+                        game.go(blank)
                     }
                     9 => if game.posswin(1)!=0 {
                         game.go(game.posswin(1))
