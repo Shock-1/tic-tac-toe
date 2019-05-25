@@ -68,10 +68,12 @@ fn main() {
                         game.go(blank)
                     }
                     8 => if game.posswin(2)!=0 {
-                        game.go(game.posswin(2))
+                        game.go(game.posswin(2));
+                        //dbg!(game.posswin(1));
                     }
                     else if game.posswin(1)!=0 {
-                        game.go(game.posswin(1))
+                        //dbg!(game.posswin(1));
+                        game.go(game.posswin(1));
                     }
                     else {
                         let mut blank = 1;
@@ -147,17 +149,17 @@ fn main() {
                         game.go(game.posswin(2))
                     }
                     else {
-                        let mut blank;
+                        let mut blank = 1;
                         let arr = game.board;
                         for (a,b) in arr.iter().enumerate(){
                             match b {
                                 2 => blank = a,
                                 _ => continue,
                             }
-                            game.go(blank)
                         }
+                        game.go(blank)
                     }
-                    8 => if game.posswin(2)!=0 {
+                    8 =>if game.posswin(2)!=0 {
                         game.go(game.posswin(2))
                     }
                     else if game.posswin(1)!=0 {
@@ -172,7 +174,7 @@ fn main() {
                                 _ => continue,
                             }
                         }
-                        game.go(blank)
+                        game.go(blank);
                     }
                     9 => if game.posswin(1)!=0 {
                         game.go(game.posswin(1))

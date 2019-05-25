@@ -33,12 +33,12 @@ impl Game {
         for i in 0..3 {
             if player == 1 {
                 if self.board[3*i] * self.board[3*i + 1] * self.board[3*i + 2] == 18 {
-                    if self.board[i] == 2 {
-                        return i+1
-                    } else if self.board[i + 1] == 2 {
-                        return i + 2
+                    if self.board[3*i] == 2 {
+                        return 3*i+1
+                    } else if self.board[3*i + 1] == 2 {
+                        return 3*i + 2
                     } else {
-                        return i + 3
+                        return 3*i + 3
                     }
                 } else if self.board[i] * self.board[i + 3] * self.board[i + 6] == 18 {
                     if self.board[i] == 2 {
@@ -68,12 +68,12 @@ impl Game {
             }
             if player == 2 {
                 if self.board[3*i] * self.board[3*i + 1] * self.board[3*i + 2] == 50 {
-                    if self.board[i] == 2 {
-                        return i+1
-                    } else if self.board[i + 1] == 2 {
-                        return i + 2
+                    if self.board[3*i] == 2 {
+                        return 3*i+1
+                    } else if self.board[3*i + 1] == 2 {
+                        return 3*i + 2
                     } else {
-                        return i + 3
+                        return 3*i + 3
                     }
                 }
                 if self.board[i] * self.board[i + 3] * self.board[i + 6] == 50 {
@@ -121,7 +121,7 @@ impl Game {
 
         }
         self.check_win();
-        //dbg!(self.board);
+        //dbg!(&self);
         println!("AI moved to {}", n);
         self.turn+=1;
     }
